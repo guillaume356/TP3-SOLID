@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EndGame.cpp" />
     <ClCompile Include="Gamemode.cpp" />
     <ClCompile Include="Grille.cpp" />
     <ClCompile Include="Morpion.cpp" />
@@ -149,8 +150,10 @@
     <ClCompile Include="TP3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EndGame.h" />
     <ClInclude Include="Gamemode.h" />
     <ClInclude Include="Grille.h" />
+    <ClInclude Include="IPlayer.h" />
     <ClInclude Include="Morpion.h" />
     <ClInclude Include="MorpionGame.h" />
     <ClInclude Include="Player.h" />

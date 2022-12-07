@@ -1,5 +1,5 @@
 #include "Puissance4Game.h"
-
+#include "IPlayer.h"
 
 void Puissance4Game::Deroulement()
 {
@@ -25,7 +25,7 @@ void Puissance4Game::Deroulement()
                     {
                         std::cout << std::endl << "Tour du joueur : " << Player2.GetNomDuJoueur() << "(" << Player2.GetNomDuJoueur() << ")" << std::endl;
                         grille4 = Puissance4Game.Remplir(Player2,grille4);
-                        EnregistrementVictory = Puissance4Game.Victoire(grille4);
+                        EnregistrementVictory = Puissance4Game.Victoire(grille4);   
                     }
                 } while (EnregistrementVictory == false);
                 system("CLS");

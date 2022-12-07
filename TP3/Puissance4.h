@@ -3,7 +3,8 @@
 #include "Player.h"
 #include "Grille.h"
 #include "Gamemode.h"
-class Puissance4 : public Gamemode
+#include "EndGame.h"
+class Puissance4 : public Gamemode, public EndGame
 {
 public:
 
