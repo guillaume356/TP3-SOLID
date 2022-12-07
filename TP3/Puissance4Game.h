@@ -5,7 +5,7 @@
 class Puissance4Game : public Puissance4
 {
 public:
-	void Deroulement();
+	void Deroulement() const;
 	Puissance4Game(Player P1, Player P2);
 
 	Player getPlayer1() { return Player1; }

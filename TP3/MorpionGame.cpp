@@ -1,10 +1,11 @@
 #include "MorpionGame.h"
 
-void MorpionGame::Deroulement()
+void MorpionGame::Deroulement() const
 {
     bool EnregistrementVictory = false;
     bool Egalite = false;
     int Robot = 0;
+    int ConditionVictoire = 3;
     Grille grille(3, 3);
     Morpion MorpionGame(grille);
     MorpionGame.Initialisation(grille);
@@ -25,14 +26,14 @@ void MorpionGame::Deroulement()
             std::cout << std::endl << "Tour du joueur : " << Player1.GetNomDuJoueur() << "(" << Player1.GetPionDuJoueur() << ")" << std::endl;
             grille = MorpionGame.Remplir(Player1, grille);
             MorpionGame.Afficher(grille);
-            EnregistrementVictory = MorpionGame.Victoire(grille);
+            EnregistrementVictory = MorpionGame.Victoire(grille, ConditionVictoire);
             if (EnregistrementVictory == false)
                 Egalite = MorpionGame.Egalite(grille);
             if (!EnregistrementVictory && !Egalite)
             {
                 std::cout << std::endl << "Tour de l'ordinateur : " << std::endl;
                 grille = MorpionGame.RemplirBot(grille);
-                EnregistrementVictory = MorpionGame.Victoire(grille);
+                EnregistrementVictory = MorpionGame.Victoire(grille, ConditionVictoire);
                 if (EnregistrementVictory == false)
                     Egalite = MorpionGame.Egalite(grille);
             }
@@ -50,7 +51,6 @@ void MorpionGame::Deroulement()
                     break;
             }
         } while (true);
-
         system("CLS");
     }
     else if (Robot == 2)
@@ -62,7 +62,7 @@ void MorpionGame::Deroulement()
             //Tour J1
             grille = MorpionGame.Remplir(Player1, grille);
             MorpionGame.Afficher(grille);
-            EnregistrementVictory = MorpionGame.Victoire(grille);
+            EnregistrementVictory = MorpionGame.Victoire(grille, ConditionVictoire);
             if (EnregistrementVictory == false)
                 Egalite = MorpionGame.Egalite(grille);
             //Tour J2
@@ -70,7 +70,7 @@ void MorpionGame::Deroulement()
             {
                 std::cout << std::endl << "Tour du joueur : " << Player2.GetNomDuJoueur() << "(" << Player2.GetPionDuJoueur() << ")" << std::endl;
                 grille = MorpionGame.Remplir(Player2, grille);
-                EnregistrementVictory = MorpionGame.Victoire(grille);
+                EnregistrementVictory = MorpionGame.Victoire(grille, ConditionVictoire);
                 if (EnregistrementVictory == false)
                     Egalite = MorpionGame.Egalite(grille);
             }

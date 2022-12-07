@@ -5,9 +5,9 @@
 
 void Gamemode::Afficher(Grille grille1) const
 {
-	for (int i = 0; i < grille1.getNbColumns(); i++)
+	for (int i = 0; i < grille1.getNbRows(); i++)
 	{
-		for (int j = 0; j < grille1.getNbRows(); j++)
+		for (int j = 0; j < grille1.getNbColumns(); j++)
 		{
 			if (grille1.grid[i][j] == 0)
 			{
@@ -25,7 +25,7 @@ void Gamemode::Afficher(Grille grille1) const
 				}
 			}
 
-			if (j == grille1.getNbRows() - 1)
+			if (j == grille1.getNbColumns() - 1)
 			{
 				std::cout << std::endl;
 			}
@@ -40,14 +40,13 @@ void Gamemode::Afficher(Grille grille1) const
 
 void Gamemode::Initialisation(Grille grille1) const
 {
-	for (int i = 0; i < grille1.getNbColumns(); i++)
+	for (int i = 0; i < grille1.getNbRows(); i++)
 	{
-		for (int j = 0; j < grille1.getNbRows(); j++)
+		for (int j = 0; j < grille1.getNbColumns(); j++)
 		{
 			grille1.grid[i][j] = 0;
 		}
 	}
 }
-
 
 

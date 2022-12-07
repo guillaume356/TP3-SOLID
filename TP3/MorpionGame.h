@@ -5,7 +5,7 @@
 class MorpionGame : public Morpion
 {
 public:
-	void Deroulement();
+	void Deroulement() const;
 	MorpionGame(Player P1, Player P2);
 
 	Player getPlayer1() { return Player1; }

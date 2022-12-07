@@ -1,94 +1,114 @@
 #include "EndGame.h"
-#include "Gamemode.h"
-
 #include "Morpion.h"
+#include <Windows.h>
 
-
-
-bool EndGame::Victoire(Grille grille1) const
+bool  EndGame::Victoire(Grille grille1, int ConditionVictoire) const
 {
 	// Vérifier les lignes
-	for (int i = 0; i < grille1.getNbColumns(); i++)
-	{
-		bool victoireLigne = true;
-		for (int j = 1; j < grille1.getNbRows(); j++)
-		{
-			if (grille1.grid[i][0] != grille1.grid[i][j])
-			{
-				victoireLigne = false;
-				break;
-			}
-		}
-		if (victoireLigne && grille1.grid[i][0] != 0)
-		{
-			cout << "Victoire d'un joueur" << endl;
-			return true;
-		}
-	}
-
-	// Vérifier les colonnes
+	int testCompteurLigne = 0;
 	for (int i = 0; i < grille1.getNbRows(); i++)
 	{
-		bool victoireColonne = true;
-		for (int j = 1; j < grille1.getNbColumns(); j++)
+		for (int j = 0; j <= grille1.getNbColumns() - ConditionVictoire; j++)
 		{
-			if (grille1.grid[0][i] != grille1.grid[j][i])
+			for (int k = 0; k < ConditionVictoire; k++)
 			{
-				victoireColonne = false;
-				break;
+				if (grille1.grid[i][j] == grille1.grid[i][j + k] && grille1.grid[i][j + k] != 0)
+				{
+					testCompteurLigne++;
+					if (testCompteurLigne == ConditionVictoire)
+					{
+
+						std::cout << "Victoire Vrai";
+						Sleep(3000);
+						return true;
+					}
+				}
+				else
+					testCompteurLigne = 0;
 			}
 		}
-		if (victoireColonne && grille1.grid[0][i] != 0)
+	}
+
+	// Vérifier les lignes
+	int testCompteurColonne = 0;
+	for (int i = 0; i <= grille1.getNbRows() - ConditionVictoire; i++)
+	{
+		for (int j = 0; j < grille1.getNbColumns(); j++)
 		{
-			cout << "Victoire d'un joueur" << endl;
-			return true;
+			for (int k = 0; k < ConditionVictoire; k++)
+			{
+				if (grille1.grid[i][j] == grille1.grid[i + k][j] && grille1.grid[i + k][j] != 0)
+				{
+					testCompteurColonne++;
+					if (testCompteurColonne == ConditionVictoire)
+					{
+
+						std::cout << "Victoire Vrai";
+						Sleep(3000);
+						return true;
+					}
+				}
+				else
+					testCompteurColonne = 0;
+			}
 		}
 	}
 
+	int testCompteurDiag1 = 0;
 	// Vérifier la diagonale principale
-	bool victoireDiagonalePrincipale = true;
-	for (int i = 1; i < grille1.getNbRows(); i++)
+	for (int i = 0; i <= grille1.getNbRows() - ConditionVictoire; i++)
 	{
-		if (grille1.grid[0][0] != grille1.grid[i][i])
+		for (int j = 0; j <= grille1.getNbColumns() - ConditionVictoire; j++)
 		{
-			victoireDiagonalePrincipale = false;
-			break;
+			for (int k = 0; k < ConditionVictoire; k++)
+			{
+				if (grille1.grid[i][j] == grille1.grid[i + k][j + k] && grille1.grid[i + k][j + k] != 0)
+				{
+					testCompteurDiag1++;
+					if (testCompteurDiag1 == ConditionVictoire)
+					{
+
+						std::cout << "Victoire Vrai";
+						Sleep(3000);
+						return true;
+					}
+				}
+				else
+					testCompteurDiag1 = 0;
+			}
 		}
 	}
-	if (victoireDiagonalePrincipale && grille1.grid[0][0] != 0)
-	{
-		cout << "Victoire d'un joueur" << endl;
-		return true;
-	}
 
-	// Vérifier la diagonale secondaire
-	bool victoireDiagonaleSecondaire = true;
-	for (int i = 1; i < grille1.getNbRows(); i++)
-	{
-		if (grille1.grid[grille1.getNbRows() - 1][0] != grille1.grid[grille1.getNbRows() - 1 - i][i])
-		{
-			victoireDiagonaleSecondaire = false;
-			break;
-		}
-	}
-	if (victoireDiagonaleSecondaire && grille1.grid[grille1.getNbRows() - 1][0] != 0)
-	{
-		cout << "Victoire d'un joueur" << endl;
-		return true;
-	}
-
+	////NE MARCHE PAS : 
+	//// 
+	//// 
+	////int testCompteurDiag2 = 0;
+	////// Vérifier la diagonale principale
+	////for (int i = grille1.getNbRows(); i >= ConditionVictoire; i--)
+	////{
+	////	for (int j = 0; j <= grille1.getNbColumns() - ConditionVictoire; j++)
+	////	{
+	////		for (int k = 0; k < ConditionVictoire; k++)
+	////		{
+	////			if (grille1.grid[i][j] == grille1.grid[i-k][j+k] && grille1.grid[i][j] != 0)
+	////			{
+	////				std::cout << "TEST";
+	////			}
+	////		}
+	////	}
+	////}
 	return false;
 }
 
 
 
-bool EndGame::Egalite(Grille grille1) const
+bool  EndGame::Egalite(Grille grille1) const
 {
 	// Egalité
 	int compteur = 0;
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < grille1.getNbRows(); i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (int j = 0; j < grille1.getNbColumns(); j++)
 		{
 			if (grille1.grid[i][j] != 0)
 			{
@@ -103,4 +123,3 @@ bool EndGame::Egalite(Grille grille1) const
 	}
 	return false;
 }
-

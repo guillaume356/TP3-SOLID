@@ -2,8 +2,8 @@
 #include <iostream>
 
 Grille::Grille(int xGridSize, int yGridSize) {
-    nbRows = xGridSize;
-    nbColumns = yGridSize;
+    nbRows = yGridSize;
+    nbColumns = xGridSize;
 
     std::vector<std::vector<int>> rowsVector;
 
@@ -19,6 +19,3 @@ Grille::Grille(int xGridSize, int yGridSize) {
 
     this->grid = rowsVector;
 }
-
-Grille::Grille(){}
-
