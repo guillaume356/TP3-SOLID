@@ -9,7 +9,7 @@ public:
 
 	Puissance4(Grille grille);
 	Grille Remplir(Player P, Grille grille);
-
+	Puissance4();
 
 private:
 	

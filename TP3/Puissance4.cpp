@@ -1,6 +1,10 @@
 #include "Puissance4.h"
 
 
+Puissance4::Puissance4()
+{
+}
+
 
 Puissance4::Puissance4(Grille grille) {
 	this->grille = grille;
@@ -36,7 +40,12 @@ Grille Puissance4::Remplir(Player P, Grille grille)
 			{
 				if (grille.grid[Colonne][Ligne] == 0 && Remplis == false)
 				{
-					grille.grid[Colonne][Ligne] = 1; // Fill in the first empty spot with the player's token
+					if (P.GetPionDuJoueur() == 'X') {
+						grille.grid[Colonne][Ligne] = 1; // Fill in the first empty spot with the player's token
+					}
+					if (P.GetPionDuJoueur() == 'O') {
+						grille.grid[Colonne][Ligne] = 2; // Fill in the first empty spot with the player's token
+					}
 					Remplis = true;
 				}
 			}
@@ -44,5 +53,6 @@ Grille Puissance4::Remplir(Player P, Grille grille)
 	} while (Remplis == false);
 	return grille;
 }
+
 
 
