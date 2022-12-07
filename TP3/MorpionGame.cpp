@@ -50,6 +50,7 @@ void MorpionGame::Deroulement()
                     break;
             }
         } while (true);
+
         system("CLS");
     }
     else if (Robot == 2)

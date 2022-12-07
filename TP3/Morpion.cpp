@@ -10,7 +10,7 @@ Morpion::Morpion() {
 }
 
 
-Grille Morpion::Remplir(Player P, Grille grille1)
+Grille Morpion::Remplir(Player P, Grille grille1) const
 {
 	bool Remplis = false;
 	bool Saisie = false;
@@ -53,7 +53,7 @@ Grille Morpion::Remplir(Player P, Grille grille1)
 
 }
 
-Grille Morpion::RemplirBot(Grille grille)
+Grille Morpion::RemplirBot(Grille grille) const
 {
 	bool Remplis = false;
 	int RandomColumn;

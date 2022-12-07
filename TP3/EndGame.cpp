@@ -5,7 +5,7 @@
 
 
 
-bool EndGame::Victoire(Grille grille1)
+bool EndGame::Victoire(Grille grille1) const
 {
 	// Vérifier les lignes
 	for (int i = 0; i < grille1.getNbColumns(); i++)
@@ -82,7 +82,7 @@ bool EndGame::Victoire(Grille grille1)
 
 
 
-bool EndGame::Egalite(Grille grille1)
+bool EndGame::Egalite(Grille grille1) const
 {
 	// Egalité
 	int compteur = 0;

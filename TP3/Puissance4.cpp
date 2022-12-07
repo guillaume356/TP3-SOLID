@@ -12,7 +12,7 @@ Puissance4::Puissance4(Grille grille) {
 
 
 
-Grille Puissance4::Remplir(Player P, Grille grille)
+Grille Puissance4::Remplir(Player P, Grille grille) const
 {
 	bool Remplis = false;
 	bool Saisie = false;

@@ -9,7 +9,7 @@ class Puissance4 : public Gamemode, public EndGame
 public:
 
 	Puissance4(Grille grille);
-	Grille Remplir(Player P, Grille grille);
+	Grille Remplir(Player P, Grille grille) const;
 	Puissance4();
 
 private:

@@ -3,7 +3,7 @@
 #include "Morpion.h"
 
 
-void Gamemode::Afficher(Grille grille1)
+void Gamemode::Afficher(Grille grille1) const
 {
 	for (int i = 0; i < grille1.getNbColumns(); i++)
 	{
@@ -38,7 +38,7 @@ void Gamemode::Afficher(Grille grille1)
 }
 
 
-void Gamemode::Initialisation(Grille grille1)
+void Gamemode::Initialisation(Grille grille1) const
 {
 	for (int i = 0; i < grille1.getNbColumns(); i++)
 	{

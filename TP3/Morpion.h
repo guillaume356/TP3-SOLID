@@ -11,8 +11,9 @@ public:
 	//Constructeur 
 	Morpion(Grille grille);
 	Morpion();
-	Grille Remplir(Player P, Grille grille);
-	Grille RemplirBot(Grille grille);
+
+	Grille Remplir(Player P, Grille grille1) const;
+	Grille RemplirBot(Grille grille) const;
 
 private:
 	

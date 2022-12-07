@@ -20,3 +20,5 @@ Grille::Grille(int xGridSize, int yGridSize) {
     this->grid = rowsVector;
 }
 
+Grille::Grille(){}
+

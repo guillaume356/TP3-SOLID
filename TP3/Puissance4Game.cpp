@@ -16,6 +16,7 @@ void Puissance4Game::Deroulement()
                 std::cout << "Puissance 4 : " << std::endl;
                 std::cout << "=======================================" << std::endl;
                 do {
+
                     Puissance4Game.Afficher(grille4);
                     std::cout << std::endl << "Tour du joueur : " << Player1.GetNomDuJoueur() << "(" << Player1.GetPionDuJoueur() << ")" << std::endl;
                     grille4 = Puissance4Game.Remplir(Player1, grille4);
@@ -28,6 +29,7 @@ void Puissance4Game::Deroulement()
                         EnregistrementVictory = Puissance4Game.Victoire(grille4);   
                     }
                 } while (EnregistrementVictory == false);
+
                 system("CLS");
 }
 
