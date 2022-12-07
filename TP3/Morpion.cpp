@@ -5,6 +5,10 @@ Morpion::Morpion(Grille grille) {
 	this->grille = grille;
 }
 
+Morpion::Morpion() {
+
+}
+
 
 Grille Morpion::Remplir(Player P, Grille grille1)
 {
@@ -49,5 +53,28 @@ Grille Morpion::Remplir(Player P, Grille grille1)
 
 }
 
+Grille Morpion::RemplirBot(Grille grille)
+{
+	bool Remplis = false;
+	int RandomColumn;
+	int RandomRow;
 
+	do
+	{
+		RandomColumn = (rand() % 3);
+		RandomRow = (rand() % 3);
+		if (grille.grid[RandomColumn][RandomRow] != 0)
+		{
+			std::cout << "L'ordinateur est pas doue ! " << std::endl;
+		}
+		else if (grille.grid[RandomColumn][RandomRow] == 0)
+		{
+			std::cout << "L'ordinateur a remplis une case" << std::endl;
+			grille.grid[RandomColumn][RandomRow] = 2;
+			Remplis = true;
+		}
+	} while (Remplis == false);
+
+	return grille;
+}
 

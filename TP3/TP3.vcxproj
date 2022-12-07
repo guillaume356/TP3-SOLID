@@ -142,16 +142,20 @@
     <ClCompile Include="Gamemode.cpp" />
     <ClCompile Include="Grille.cpp" />
     <ClCompile Include="Morpion.cpp" />
+    <ClCompile Include="MorpionGame.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Puissance4.cpp" />
+    <ClCompile Include="Puissance4Game.cpp" />
     <ClCompile Include="TP3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gamemode.h" />
     <ClInclude Include="Grille.h" />
     <ClInclude Include="Morpion.h" />
+    <ClInclude Include="MorpionGame.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Puissance4.h" />
+    <ClInclude Include="Puissance4Game.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

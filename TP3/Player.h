@@ -2,10 +2,6 @@
 #include <iostream>
 class Player
 {
-private:
-    char PionDuJoueur;
-    std::string NomDuJoueur;
-
 public:
 
     inline char GetPionDuJoueur() const
@@ -19,4 +15,12 @@ public:
     }
 
     Player(char PionDuJoueur, std::string NomDuJoueur);
+
+    Player();
+    
+private:
+    char PionDuJoueur;
+    std::string NomDuJoueur;
+
+
 };

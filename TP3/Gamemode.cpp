@@ -144,7 +144,7 @@ bool  Gamemode::Egalite(Grille grille1)
 	}
 	if (compteur == grille1.getNbColumns() * grille1.getNbRows())
 	{
-		cout << "Egalité";
+		cout << "Egalite" << std::endl;
 		return true;
 	}
 	return false;
