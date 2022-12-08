@@ -26,7 +26,7 @@ Grille Puissance4::Remplir(Player P, Grille grille) const
 			if (Colonne >= 1 && Colonne <= grille.getNbColumns())
 				Saisie = true;
 			else
-				std::cout << "Erreur lors de la saisie, le nombre doit etre entre 1 et 7" << std::endl;
+				std::cout << "Erreur lors de la saisie, le nombre doit etre entre 1 et" << grille.getNbColumns() << std::endl;
 		} while (Saisie == false);
 		Colonne = Colonne - 1;
 		if (grille.grid[0][Colonne] != 0)

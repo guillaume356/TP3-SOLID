@@ -1,5 +1,5 @@
 #include "Puissance4Game.h"
-#include "IPlayer.h"
+
 
 void Puissance4Game::Deroulement() const
 {
